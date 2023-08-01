@@ -31,8 +31,10 @@ export const handler = async function (event) {
     return {
       statusCode: 200,
       headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET,DELETE,PUT",
       },
       body: JSON.stringify({
         message: `Successfully finished operation: "${event.httpMethod}"`,
@@ -44,8 +46,10 @@ export const handler = async function (event) {
     return {
       statusCode: 500,
       headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET,DELETE,PUT",
       },
       body: JSON.stringify({
         message: "Failed to perform operation.",
